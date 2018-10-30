@@ -24,18 +24,28 @@ class App extends Component {
         return 0;
       })
     })
-    /* MÉTODO THOR
-    let {contacts} = this.state;
-    contacts.sort((a,b) => {
-      const nameA = a.name.toUpperCase();
-      const nameB = b.name.toLowerCase();
-      if(nameA < nameB) { return -1; }
-      if(nameA > nameB) { return 1; }
-      return 0;
-    })
-    this.setState({
-      contacts: contacts;
-    })
+
+
+    /* MÉTODO THOR - ORDENAR POR NOMBRE 
+    
+    Separado en dos funciones, una ordena la otra actualiza
+
+    sortContacts = () => {
+      return contacts.sort((a,b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if(nameA < nameB) { return -1; }
+        if(nameA > nameB) { return 1; }
+        return 0;
+      })
+    }
+    handleSortContact = () => {
+      let {contacts} = this.state;
+      
+      this.setState({
+        contacts: this.sortContacts(contacts);
+      })
+    }
     */
 
   }
