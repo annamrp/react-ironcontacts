@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Contact extends Component {
-
+  //cada contact se renderizará con las props que le pasamos desde el map que hacemos en Table.js
   render() {
     return (
           <tr>

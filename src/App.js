@@ -9,7 +9,7 @@ class App extends Component {
     contacts: contacts.slice(0,5)
   }
 
-  getRandomContact = () => {
+  addRandomContact = () => {
     const random = Math.floor(Math.random()*contacts.length)
     this.setState({
       contacts: this.state.contacts.concat(contacts[random])
@@ -24,6 +24,20 @@ class App extends Component {
         return 0;
       })
     })
+    /* MÉTODO THOR
+    let {contacts} = this.state;
+    contacts.sort((a,b) => {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toLowerCase();
+      if(nameA < nameB) { return -1; }
+      if(nameA > nameB) { return 1; }
+      return 0;
+    })
+    this.setState({
+      contacts: contacts;
+    })
+    */
+
   }
 
   sortByPopularity = () => {
@@ -33,12 +47,12 @@ class App extends Component {
       })
     })
   }
-  //a <Table /> le paso como props contacts que será igual al state
+  //a <Table /> le paso como props contacts que será igual al state, por lo que renderizará el estado actual
   render() {
     return (
       <div className="App">
         <h1>IronContacts</h1>
-        <button onClick={this.getRandomContact}>Add Random Contact</button>
+        <button onClick={this.addRandomContact}>Add Random Contact</button>
         <button onClick={this.sortByName}>Sort By Name</button>
         <button onClick={this.sortByPopularity}>Sort By Popularity</button>
           <Table contacts = {this.state.contacts}/>
