@@ -33,7 +33,7 @@ class App extends Component {
       })
     })
   }
-
+  //a <Table /> le paso como props contacts que será igual al state
   render() {
     return (
       <div className="App">
