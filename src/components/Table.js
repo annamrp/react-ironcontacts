@@ -11,6 +11,9 @@ class Table extends Component {
         picture = {contact.pictureUrl}
         name = {contact.name}
         popularity = {contact.popularity}
+        index = {index}
+        deleteContact = {this.props.deleteContact}
+        
         />
     })
   }

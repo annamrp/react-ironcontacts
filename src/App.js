@@ -27,7 +27,7 @@ class App extends Component {
 
 
     /* MÉTODO THOR - ORDENAR POR NOMBRE 
-    
+
     Separado en dos funciones, una ordena la otra actualiza
 
     sortContacts = () => {
@@ -57,6 +57,17 @@ class App extends Component {
       })
     })
   }
+
+  handleDeleteContact = (index) => {
+    let { contacts } = this.state;
+    contacts.splice(index,1)
+    this.setState ({
+      contacts: contacts
+    })
+  }
+
+
+  
   //a <Table /> le paso como props contacts que será igual al state, por lo que renderizará el estado actual
   render() {
     return (
@@ -65,7 +76,7 @@ class App extends Component {
         <button onClick={this.addRandomContact}>Add Random Contact</button>
         <button onClick={this.sortByName}>Sort By Name</button>
         <button onClick={this.sortByPopularity}>Sort By Popularity</button>
-          <Table contacts = {this.state.contacts}/>
+          <Table deleteContact={this.handleDeleteContact} contacts = {this.state.contacts}/>
       </div>
     );
   }
